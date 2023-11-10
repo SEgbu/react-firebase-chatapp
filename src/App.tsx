@@ -2,15 +2,14 @@ import React from "react";
 
 // react firebase hooks
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
 
-import {auth, firestore} from "./Firebase";
+import {auth} from "./Firebase";
 
 // import other components
 import { SignIn } from "./SignIn";
 import { ChatRoom } from "./ChatRoom";
 
-function App() {
+const App : React.FC = () =>  {
 	const [user] = useAuthState(auth);
 
     return (
