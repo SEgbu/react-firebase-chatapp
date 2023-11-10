@@ -1,0 +1,107 @@
+.App {
+    background-color: var(--red1);
+    color: white;
+
+    height: 708px;
+}
+
+.SignIn {
+    display: flex;
+    justify-content: center;
+    
+    padding-top: 320px;
+}
+
+.SignIn button {
+    border-width: 0;
+    border-radius: 16px;
+
+    background-color: var(--red3);
+
+    font-family: montserrat;
+    font-size: medium;
+
+    padding: 2rem;
+
+    transition: background-color 200ms;
+}
+
+.SignIn button:hover {
+    background-color: var(--red2);
+}
+
+.SignOut {
+    display: flex;
+    justify-content: end;
+}
+
+.SignOut button {
+    border-width: 0px;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: var(--red3);
+    margin: .5rem;
+
+    transition: background-color 200ms;
+}
+
+.SignOut button:hover {
+    background-color: var(--red2);
+}
+
+.ChatRoom {
+    font-family: montserrat;
+    background-color: var(--grey2);
+    padding: 1rem;
+}
+
+.ChatRoom img {
+    width: 3rem;
+    border-radius: 30px;
+}
+
+.ChatRoom form {
+    display: flex;
+    justify-content: space-around;
+    height: 4rem;
+}
+
+.ChatRoom form button {
+    border-width: 0px;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: .5rem
+}
+
+.ChatRoom form input {
+    width: 80%;
+    border-width: 0;
+    border-radius: 16px;
+    color: whitesmoke;
+    font-size: medium;
+    padding: 1rem;
+    outline: solid 0px white;
+    background-color: var(--grey1);
+
+    transition: outline-width 50ms;
+}
+
+.ChatRoom form input:focus {
+    outline-width: 3px;
+}
+
+.ChatMessage {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem;
+}
+
+.ListOfMessages {
+    overflow-y: hidden;
+}
+
+#status {
+    font-size: small;
+    color: rgb(247, 165, 49);
+}

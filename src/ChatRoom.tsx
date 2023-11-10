@@ -1,5 +1,4 @@
 import React, { FormEvent, useState } from "react";
-import { SignOut } from "./SignOut";
 import {
     addDoc,
     collection,
@@ -44,12 +43,11 @@ export const ChatRoom: React.FC = () => {
     };
 
     return (
-        <div>
-            <SignOut />
-            <div>
+        <div className="ChatRoom">
+            <div className="ListOfMessages">
                 {/* List of messages */}
                 {messages?.map((msg) => (
-                    <ChatMessage key={msg.id} messageProp={msg} />
+                    <ChatMessage key={msg.uid} messageProp={msg} />
                 ))}
             </div>
 

@@ -14,10 +14,10 @@ export const ChatMessage : React.FC<ChatMessageProps> = (props) => {
     const sentOrRecieved = (uid === auth.currentUser?.uid) ? "sent" : "recieved"
 
     return (
-        <>
+        <div className="ChatMessage">
             <img src={photoURL}/>
             <p>{text}</p>
-            <p>status: {sentOrRecieved}</p>
-        </>
+            <p id="status">status: {sentOrRecieved}</p>
+        </div>
     )
 }

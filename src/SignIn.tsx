@@ -1,6 +1,7 @@
 import React from "react"
 import { auth } from "./Firebase"
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth"
+import "./styles/App.css"
 
 export const SignIn : React.FC  = () => {
 
@@ -10,7 +11,7 @@ export const SignIn : React.FC  = () => {
     }
 
     return (
-        <div>
+        <div className="SignIn">
             <button onClick={signInWithGoogle}>Sign In with Google</button>
         </div>
     )
