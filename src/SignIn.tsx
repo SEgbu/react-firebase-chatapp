@@ -1,5 +1,5 @@
 import React from "react"
-import { auth } from "./firebase"
+import { auth } from "./Firebase"
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth"
 
 export const SignIn : React.FC  = () => {

@@ -1,5 +1,5 @@
 import React from "react"
-import { auth } from "./firebase"
+import { auth } from "./Firebase"
 
 export const SignOut : React.FC = () => {
     return (
