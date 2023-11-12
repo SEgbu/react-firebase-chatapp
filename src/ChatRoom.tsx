@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useRef, useState } from "react";
 import {
     addDoc,
     collection,
@@ -22,13 +22,16 @@ export const ChatRoom: React.FC = () => {
     const [messages] = useCollectionData(q);
 
     // gets the value from the text input
-    const [formValue, setFormValue] = useState("");
+    const [formValue, setFormValue] = useState<string>("");
+
+    // bottom of the page reference
+    const bottom = useRef<HTMLDivElement>(null);
 
     // asynchronous send message function
     const sendMessage = async (event: FormEvent) => {
         event.preventDefault();
-    
-        if (formValue != ""){
+
+        if (formValue != "") {
             await addDoc(messageRef, {
                 text: formValue,
                 createdAt: serverTimestamp(),
@@ -40,6 +43,9 @@ export const ChatRoom: React.FC = () => {
 
         // empty text input
         setFormValue("");
+
+        // scroll to the bottom of the page
+        bottom.current?.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
@@ -49,6 +55,8 @@ export const ChatRoom: React.FC = () => {
                 {messages?.map((msg) => (
                     <ChatMessage key={msg.uid} messageProp={msg} />
                 ))}
+
+                <div ref={bottom}></div>
             </div>
 
             <form onSubmit={sendMessage}>

@@ -61,6 +61,7 @@
 }
 
 .ChatRoom form {
+    background-color: var(--grey2);
     display: flex;
     justify-content: space-around;
     height: 4rem;
@@ -98,7 +99,8 @@
 }
 
 .ListOfMessages {
-    overflow-y: hidden;
+    overflow-y: scroll;
+    height: 31rem;
 }
 
 #status {
